@@ -21,9 +21,9 @@
 	</licenses>
 	
 	<scm>
-		<connection>scm:git:git://github.com/42Lines/wicket-source.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com/42Lines/wicket-source.git</developerConnection>
-		<url>http://github.com/42Lines/wicket-source</url>
+		<connection>scm:git:git://github.com/jennybrown8/wicket-source.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jennybrown8/wicket-source.git</developerConnection>
+		<url>http://github.com/jennybrown8/wicket-source</url>
 	</scm>
 
 	<developers>
