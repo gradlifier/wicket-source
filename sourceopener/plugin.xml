@@ -40,7 +40,7 @@
       <page
             class="com.github.jennybrown8.wicketsourceopener.preferences.SourceOpenerPreferencePage"
             id="com.github.jennybrown8.wicketsourceopener.preferences.SourceOpenerPreferencePage"
-            name="SourceOpener Preferences">
+            name="WicketSourceOpener Preferences">
       </page>
    </extension>
    <extension

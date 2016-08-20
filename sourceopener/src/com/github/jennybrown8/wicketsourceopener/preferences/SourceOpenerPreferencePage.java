@@ -57,12 +57,7 @@ public class SourceOpenerPreferencePage extends FieldEditorPreferencePage implem
 		createNoteComposite(JFaceResources.getDialogFont(), this.getFieldEditorParent().getParent(), "Logs:",
 				"To see plug-in logs on Windows, modify eclipse.ini to use java.exe instead of javaw.exe to get a console.");
 
-		/*
-		 * addField(new RadioGroupFieldEditor( PreferenceConstants.P_CHOICE,
-		 * "An example of a multiple-choice preference", 1, new String[][] { {
-		 * "&Choice 1", "choice1" }, { "C&hoice 2", "choice2" } },
-		 * getFieldEditorParent()));
-		 */
+
 	}
 
 	/*

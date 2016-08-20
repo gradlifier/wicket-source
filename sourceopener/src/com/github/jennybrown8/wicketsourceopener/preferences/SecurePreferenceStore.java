@@ -16,7 +16,7 @@ import org.eclipse.jface.util.PropertyChangeEvent;
 import org.eclipse.jface.util.SafeRunnable;
 
 /**
- * This is an adpater between ISecurePreferences (underlying storage) and 
+ * This is an adapter between ISecurePreferences (underlying storage) and 
  * IPreferences (API that the convenience PreferencesPage field editors want to use). 
  *
  * Originally from net.synck.gcontacts.preferences.SecurePreferenceStore and licensed as Lesser GPL

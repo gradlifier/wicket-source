@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: sourceopener
-Bundle-SymbolicName: net.ftlines.wicketsource.sourceopener;singleton:=true
+Bundle-Name: wicketsourceopener
+Bundle-SymbolicName: com.github.jennybrown8.wicketsourceopener;singleton:=true
 Bundle-Version: 7.4.0.1
 Bundle-Activator: com.github.jennybrown8.wicketsourceopener.Activator
 Require-Bundle: org.eclipse.ui,
