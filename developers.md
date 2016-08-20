@@ -5,21 +5,20 @@
     wicket-source-parent
     ├── WicketSourceForChrome
     ├── WicketSourceForFirebug
-    │   └── wicketsource@gmail.com
     ├── build
     ├── docs
     │   └── icons_psd
-    ├── wicket-source-opener
-    │   ├── META-INF
-    │   ├── bin
-    │   ├── icons
-    │   └── src
     ├── wicket-source
     │   ├── src
     │   └── target
-    └── wicket-source-demo
-        ├── src
-        └── target
+    ├── wicket-source-demo
+    │   ├── src
+    │   └── target
+    └── wicket-source-opener
+        ├── META-INF
+        ├── bin
+        ├── icons
+        └── src
 
 There is one parent folder (the git repo) which contains 5 sub projects, each of 
 which has its own build and package routine.
