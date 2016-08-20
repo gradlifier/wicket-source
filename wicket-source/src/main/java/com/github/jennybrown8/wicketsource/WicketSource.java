@@ -1,4 +1,4 @@
-package net.ftlines.wicketsource;
+package com.github.jennybrown8.wicketsource;
 
 import org.apache.wicket.Application;
 

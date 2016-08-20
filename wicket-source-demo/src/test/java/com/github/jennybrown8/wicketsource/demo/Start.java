@@ -1,4 +1,4 @@
-package net.ftlines.wicketsource.demo;
+package com.github.jennybrown8.wicketsource.demo;
 
 import org.apache.wicket.util.time.Duration;
 import org.eclipse.jetty.server.Server;

@@ -1,4 +1,4 @@
-package net.ftlines.wicketsource;
+package com.github.jennybrown8.wicketsource;
 
 import java.util.ArrayList;
 import java.util.List;

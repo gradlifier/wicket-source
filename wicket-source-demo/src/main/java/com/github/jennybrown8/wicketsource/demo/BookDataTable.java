@@ -1,11 +1,9 @@
-package net.ftlines.wicketsource.demo;
+package com.github.jennybrown8.wicketsource.demo;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-
-import net.ftlines.wicketsource.demo.BookComparator.BookSort;
 
 import org.apache.wicket.extensions.markup.html.repeater.data.table.DefaultDataTable;
 import org.apache.wicket.extensions.markup.html.repeater.data.table.IColumn;
@@ -14,6 +12,8 @@ import org.apache.wicket.extensions.markup.html.repeater.util.SortParam;
 import org.apache.wicket.extensions.markup.html.repeater.util.SortableDataProvider;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
+
+import com.github.jennybrown8.wicketsource.demo.BookComparator.BookSort;
 
 /**
  * A list of books on the web page

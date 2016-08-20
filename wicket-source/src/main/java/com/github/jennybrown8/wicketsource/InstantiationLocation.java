@@ -1,11 +1,11 @@
-package net.ftlines.wicketsource;
+package com.github.jennybrown8.wicketsource;
 
 import java.io.Serializable;
 
-import net.ftlines.wicketsource.AttributeModifyingInstantiationListener.UnsupportedComponentException;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.MarkupException;
+
+import com.github.jennybrown8.wicketsource.AttributeModifyingInstantiationListener.UnsupportedComponentException;
 
 /**
  * Holds information about where a component was created. Pairs with a

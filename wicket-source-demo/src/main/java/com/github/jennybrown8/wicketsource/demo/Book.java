@@ -1,4 +1,4 @@
-package net.ftlines.wicketsource.demo;
+package com.github.jennybrown8.wicketsource.demo;
 
 import java.io.Serializable;
 

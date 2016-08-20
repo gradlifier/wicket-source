@@ -8,18 +8,11 @@ Customizations that are important to WicketSource working:
 2) pom.xml got the addition of wicketsource:
 
 		<dependency>
-			<groupId>net.ftlines.wicketsource</groupId>
+			<groupId>com.github.jennybrown8.wicketsource</groupId>
 			<artifactId>wicketsource</artifactId>
-			<version>1.5.0.8</version>
+			<version>7.4.0.1</version>
 		</dependency>
 		
-3) pom.xml also got an additional repository until such time as this is hosted publicly.
-
-		<repository>
-			<id>central</id>
-			<name>42lines central mirror</name>
-			<url>https://repo.aws.42lines.net/content/groups/public</url>
-		</repository>
-
-4) The home page class and html were customized merely to give the user 
+3) The home page class and html were customized merely to give the user 
    something worthwhile to click on (tags with wicketsource="" attributes).
+

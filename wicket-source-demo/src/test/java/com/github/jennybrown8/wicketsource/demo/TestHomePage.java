@@ -1,11 +1,11 @@
-package net.ftlines.wicketsource.demo;
-
-import net.ftlines.wicketsource.demo.HomePage;
-import net.ftlines.wicketsource.demo.WicketApplication;
+package com.github.jennybrown8.wicketsource.demo;
 
 import org.apache.wicket.util.tester.WicketTester;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.github.jennybrown8.wicketsource.demo.HomePage;
+import com.github.jennybrown8.wicketsource.demo.WicketApplication;
 
 /**
  * Simple test using the WicketTester

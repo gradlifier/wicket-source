@@ -1,9 +1,7 @@
-package net.ftlines.wicketsource.demo;
+package com.github.jennybrown8.wicketsource.demo;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import net.ftlines.wicketsource.demo.BookDataTable.BookDataProvider;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -21,6 +19,8 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
+
+import com.github.jennybrown8.wicketsource.demo.BookDataTable.BookDataProvider;
 
 /**
  * The main home page of this application
