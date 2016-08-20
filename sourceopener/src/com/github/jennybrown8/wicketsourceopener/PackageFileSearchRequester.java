@@ -1,16 +1,16 @@
-package net.ftlines.wicketsource.sourceopener;
+package com.github.jennybrown8.wicketsourceopener;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-
-import net.ftlines.wicketsource.sourceopener.views.OpenFileException;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jdt.core.search.SearchMatch;
 import org.eclipse.jdt.core.search.SearchRequestor;
+
+import com.github.jennybrown8.wicketsourceopener.views.OpenFileException;
 
 public class PackageFileSearchRequester extends SearchRequestor implements IExceptionCallbackHandler {
 
@@ -91,7 +91,7 @@ public class PackageFileSearchRequester extends SearchRequestor implements IExce
 		SearchMatch[] matches = new SearchMatch[list.size()];
 		for (int i = 0; i < list.size(); i++) {
 			SearchMatch match = list.get(i);
-			log.info("Matched SourceOpener file with project-relative path of project=" + match.getResource().getProject() + " and path=" + match.getResource().getProjectRelativePath());
+			log.info("Matched WicketSourceOpener file with project-relative path of project=" + match.getResource().getProject() + " and path=" + match.getResource().getProjectRelativePath());
 			matches[i] = match;
 		}
 		return matches;

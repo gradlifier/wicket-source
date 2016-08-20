@@ -5,16 +5,16 @@
    <extension
          point="org.eclipse.ui.views">
       <category
-            name="Source Opener"
-            id="net.ftlines.wicketsource.sourceopener">
+            name="Wicket Source Opener"
+            id="com.github.jennybrown8.wicketsourceopener">
       </category>
       <view
             allowMultiple="false"
-            category="net.ftlines.wicketsource.sourceopener"
-            class="net.ftlines.wicketsource.sourceopener.views.RecentFilesView"
+            category="com.github.jennybrown8.wicketsourceopener"
+            class="com.github.jennybrown8.wicketsourceopener.views.WicketSourceOpener"
             icon="icons/sample.gif"
-            id="net.ftlines.wicketsource.sourceopener.views.RecentFilesView"
-            name="Recent File Locations">
+            id="com.github.jennybrown8.wicketsourceopener.views.WicketSourceOpener"
+            name="Wicket Source Opener">
       </view>
    </extension>
    <extension
@@ -25,7 +25,7 @@
                ratio="0.5"
                relative="org.eclipse.ui.views.TaskList"
                relationship="right"
-               id="net.ftlines.wicketsource.sourceopener.views.RecentFilesView">
+               id="com.github.jennybrown8.wicketsourceopener.views.WicketSourceOpener">
          </view>
       </perspectiveExtension>
    </extension>
@@ -38,15 +38,15 @@
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
-            class="net.ftlines.wicketsource.sourceopener.preferences.SourceOpenerPreferencePage"
-            id="net.ftlines.wicketsource.sourceopener.preferences.SourceOpenerPreferencePage"
+            class="com.github.jennybrown8.wicketsourceopener.preferences.SourceOpenerPreferencePage"
+            id="com.github.jennybrown8.wicketsourceopener.preferences.SourceOpenerPreferencePage"
             name="SourceOpener Preferences">
       </page>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="net.ftlines.wicketsource.sourceopener.preferences.PreferenceInitializer">
+            class="com.github.jennybrown8.wicketsourceopener.preferences.PreferenceInitializer">
       </initializer>
    </extension>
    <extension

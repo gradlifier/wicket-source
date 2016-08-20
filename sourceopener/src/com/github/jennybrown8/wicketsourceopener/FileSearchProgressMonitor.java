@@ -1,4 +1,4 @@
-package net.ftlines.wicketsource.sourceopener;
+package com.github.jennybrown8.wicketsourceopener;
 
 import java.util.logging.Logger;
 

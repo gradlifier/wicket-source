@@ -1,6 +1,6 @@
-package net.ftlines.wicketsource.sourceopener.preferences;
+package com.github.jennybrown8.wicketsourceopener.preferences;
 
-import net.ftlines.wicketsource.sourceopener.Activator;
+import com.github.jennybrown8.wicketsourceopener.Activator;
 
 /**
  * Wraps the preferences settings for this plugin.

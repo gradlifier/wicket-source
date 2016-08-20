@@ -1,10 +1,10 @@
-package net.ftlines.wicketsource.sourceopener;
+package com.github.jennybrown8.wicketsourceopener;
 
 import java.util.Properties;
 
-import net.ftlines.wicketsource.sourceopener.views.OpenFileException;
-
 import org.eclipse.jdt.core.search.SearchMatch;
+
+import com.github.jennybrown8.wicketsourceopener.views.OpenFileException;
 
 /**
  * Represents a request to open a file and jump to a specific location in the

@@ -1,8 +1,6 @@
-package net.ftlines.wicketsource.sourceopener.preferences;
+package com.github.jennybrown8.wicketsourceopener.preferences;
 
 import java.util.logging.Logger;
-
-import net.ftlines.wicketsource.sourceopener.Activator;
 
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
@@ -11,6 +9,8 @@ import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
+
+import com.github.jennybrown8.wicketsourceopener.Activator;
 
 /**
  * This class represents a preference page that is contributed to the
@@ -29,7 +29,7 @@ public class SourceOpenerPreferencePage extends FieldEditorPreferencePage implem
 	public SourceOpenerPreferencePage() {
 		super(GRID);
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
-		setDescription("SourceOpener Preferences");
+		setDescription("WicketSourceOpener Preferences");
 	}
 
 	/**

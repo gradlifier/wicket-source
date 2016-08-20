@@ -2,6 +2,11 @@ Remaining:
 * Solve mysterious silent failure after days of running.
 * Package the build properly for release on a Eclipse update site. Check into version management / auto-updates.
 
+08/20/2016 - Lots of updates!  Same functionality.
+ - "Recent File Locations" view renamed to "Wicket Source Opener" for consistency.
+ - Updated to Java 8.  Changed artifact and package name.
+ - Adding build documentation, and re-releasing with latest.
+
 08/15/2012 - Fixed multi-module maven project path ambiguity. (v1.2.0)
  - SourceOpener now uses knowledge of which project the search result was found in, plus a project-relative
    path, to correctly open the file in the child's src folder instead of rooted at the parent. See issue #4.

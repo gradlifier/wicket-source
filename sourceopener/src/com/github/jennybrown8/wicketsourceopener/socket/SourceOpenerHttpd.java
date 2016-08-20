@@ -1,11 +1,11 @@
-package net.ftlines.wicketsource.sourceopener.socket;
+package com.github.jennybrown8.wicketsourceopener.socket;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-import net.ftlines.wicketsource.sourceopener.OpenEvent;
+import com.github.jennybrown8.wicketsourceopener.OpenEvent;
 
 /**
  * Listens for requests to open a file in an eclipse editor, fires the open

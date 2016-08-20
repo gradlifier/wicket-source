@@ -1,11 +1,11 @@
-package net.ftlines.wicketsource.sourceopener.preferences;
+package com.github.jennybrown8.wicketsourceopener.preferences;
 
 import java.util.logging.Logger;
 
-import net.ftlines.wicketsource.sourceopener.Activator;
-
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
+
+import com.github.jennybrown8.wicketsourceopener.Activator;
 
 /**
  * Class used to initialize default preference values.

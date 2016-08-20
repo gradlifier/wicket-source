@@ -1,11 +1,6 @@
-package net.ftlines.wicketsource.sourceopener;
+package com.github.jennybrown8.wicketsourceopener;
 
 import java.io.IOException;
-
-import net.ftlines.wicketsource.sourceopener.preferences.PreferenceValueService;
-import net.ftlines.wicketsource.sourceopener.socket.HttpService;
-import net.ftlines.wicketsource.sourceopener.views.OpenFileException;
-import net.ftlines.wicketsource.sourceopener.views.UIEditorFileOpener;
 
 import org.eclipse.jdt.core.search.SearchMatch;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -18,6 +13,11 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import com.github.jennybrown8.wicketsourceopener.preferences.PreferenceValueService;
+import com.github.jennybrown8.wicketsourceopener.socket.HttpService;
+import com.github.jennybrown8.wicketsourceopener.views.OpenFileException;
+import com.github.jennybrown8.wicketsourceopener.views.UIEditorFileOpener;
+
 /**
  * The activator class controls the plug-in life cycle.
  * Tutorial on plugins here: http://www.vogella.de/articles/EclipsePlugIn/article.html
@@ -25,7 +25,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin implements IStartup, IOpenEventListener {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "net.ftlines.wicketsource.sourceopener"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "com.github.jennybrown8.wicketsourceopener"; //$NON-NLS-1$
 	// The shared instance
 	private static Activator plugin;
 	// Data model entry point for this plugin.
@@ -179,7 +179,7 @@ public class Activator extends AbstractUIPlugin implements IStartup, IOpenEventL
 			// Multiple choices, so display a dialog and have the user pick one.
 			ElementListSelectionDialog dialog = new ElementListSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
 					new LabelProvider());
-			dialog.setTitle("File Selection - SourceOpener");
+			dialog.setTitle("File Selection - WicketSourceOpener");
 			dialog.setMessage("Multiple matches. Choose One (* = any string, ? = any char):");
 			dialog.setElements(matches);
 			dialog.setBlockOnOpen(true);

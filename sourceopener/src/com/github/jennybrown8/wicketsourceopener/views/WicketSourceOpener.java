@@ -1,12 +1,7 @@
-package net.ftlines.wicketsource.sourceopener.views;
+package com.github.jennybrown8.wicketsourceopener.views;
 
 import java.io.IOException;
 import java.util.logging.Logger;
-
-import net.ftlines.wicketsource.sourceopener.Activator;
-import net.ftlines.wicketsource.sourceopener.IOpenEventListener;
-import net.ftlines.wicketsource.sourceopener.OpenEvent;
-import net.ftlines.wicketsource.sourceopener.preferences.PreferenceValueService;
 
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IMenuListener;
@@ -38,6 +33,11 @@ import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
+import com.github.jennybrown8.wicketsourceopener.Activator;
+import com.github.jennybrown8.wicketsourceopener.IOpenEventListener;
+import com.github.jennybrown8.wicketsourceopener.OpenEvent;
+import com.github.jennybrown8.wicketsourceopener.preferences.PreferenceValueService;
+
 /**
  * This class provides a view tab showing files recently requested to be opened.
  * Double-clicking a recent file should re-open it to the specified location and
@@ -66,13 +66,13 @@ import org.eclipse.ui.part.ViewPart;
  * http://www.vogella.de/articles/EclipsePlugIn/article.html
  */
 
-public class RecentFilesView extends ViewPart implements IOpenEventListener, IStartup {
-	Logger log = Logger.getLogger("RecentFilesView");
+public class WicketSourceOpener extends ViewPart implements IOpenEventListener, IStartup {
+	Logger log = Logger.getLogger("WicketSourceOpener");
 
 	/**
 	 * The ID of the view as specified by the extension.
 	 */
-	public static final String ID = "net.ftlines.wicketsource.sourceopener.views.RecentFilesView";
+	public static final String ID = "com.github.jennybrown8.wicketsourceopener.views.WicketSourceOpener";
 
 	private TableViewer eventTableViewer;
 	private Action startSocketServer;
@@ -109,7 +109,7 @@ public class RecentFilesView extends ViewPart implements IOpenEventListener, ISt
 	/**
 	 * The constructor.
 	 */
-	public RecentFilesView() {
+	public WicketSourceOpener() {
 	}
 
 	/**
@@ -120,7 +120,7 @@ public class RecentFilesView extends ViewPart implements IOpenEventListener, ISt
 	@Override
 	public void onOpenEvent(final OpenEvent event)
 	{
-		final RecentFilesView view = this;
+		final WicketSourceOpener view = this;
 
 		Display.getDefault().syncExec(new Runnable() {
 			public void run()
@@ -169,7 +169,7 @@ public class RecentFilesView extends ViewPart implements IOpenEventListener, ISt
 	 */
 	public void createPartControl(Composite parent)
 	{
-		// Logger log = Logger.getLogger("RecentFilesView");
+		// Logger log = Logger.getLogger("WicketSourceOpener");
 
 		// Tips on JFace and tables:
 		// http://www.vogella.de/articles/EclipseJFaceTable/article.html
@@ -185,7 +185,7 @@ public class RecentFilesView extends ViewPart implements IOpenEventListener, ISt
 
 		// Create the help context id for the eventTableViewer's control
 		PlatformUI.getWorkbench().getHelpSystem()
-				.setHelp(eventTableViewer.getControl(), "net.ftlines.wicketsource.sourceopener.viewer");
+				.setHelp(eventTableViewer.getControl(), "com.github.jennybrown8.wicketsourceopener.viewer");
 		makeActions();
 		hookContextMenu();
 		hookDoubleClickAction();
@@ -290,7 +290,7 @@ public class RecentFilesView extends ViewPart implements IOpenEventListener, ISt
 		menuMgr.addMenuListener(new IMenuListener() {
 			public void menuAboutToShow(IMenuManager manager)
 			{
-				RecentFilesView.this.fillContextMenu(manager);
+				WicketSourceOpener.this.fillContextMenu(manager);
 			}
 		});
 		Menu menu = menuMgr.createContextMenu(eventTableViewer.getControl());

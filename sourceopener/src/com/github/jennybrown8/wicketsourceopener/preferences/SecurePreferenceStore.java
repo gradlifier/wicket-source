@@ -1,4 +1,4 @@
-package net.ftlines.wicketsource.sourceopener.preferences;
+package com.github.jennybrown8.wicketsourceopener.preferences;
 
 import java.io.IOException;
 import java.util.HashSet;

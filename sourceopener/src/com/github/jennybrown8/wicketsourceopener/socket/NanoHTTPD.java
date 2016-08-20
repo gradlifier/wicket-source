@@ -1,4 +1,4 @@
-package net.ftlines.wicketsource.sourceopener.socket;
+package com.github.jennybrown8.wicketsourceopener.socket;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;

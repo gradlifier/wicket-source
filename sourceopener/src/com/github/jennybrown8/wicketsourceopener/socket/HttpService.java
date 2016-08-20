@@ -1,18 +1,18 @@
-package net.ftlines.wicketsource.sourceopener.socket;
+package com.github.jennybrown8.wicketsourceopener.socket;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import net.ftlines.wicketsource.sourceopener.IOpenEventListener;
-import net.ftlines.wicketsource.sourceopener.OpenEvent;
-import net.ftlines.wicketsource.sourceopener.RecentEventsCache;
-import net.ftlines.wicketsource.sourceopener.preferences.PreferenceConstants;
-import net.ftlines.wicketsource.sourceopener.preferences.PreferenceValueService;
-
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+
+import com.github.jennybrown8.wicketsourceopener.IOpenEventListener;
+import com.github.jennybrown8.wicketsourceopener.OpenEvent;
+import com.github.jennybrown8.wicketsourceopener.RecentEventsCache;
+import com.github.jennybrown8.wicketsourceopener.preferences.PreferenceConstants;
+import com.github.jennybrown8.wicketsourceopener.preferences.PreferenceValueService;
 
 /**
  * Coordinates web server start/stop and event notifications from it serving

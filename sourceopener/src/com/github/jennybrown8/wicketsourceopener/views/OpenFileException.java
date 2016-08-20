@@ -1,4 +1,4 @@
-package net.ftlines.wicketsource.sourceopener.views;
+package com.github.jennybrown8.wicketsourceopener.views;
 
 /**
  * Indicates trouble opening the requested file in an editor and going to the specified line.
@@ -6,6 +6,7 @@ package net.ftlines.wicketsource.sourceopener.views;
  *
  */
 public class OpenFileException extends Exception {
+	private static final long serialVersionUID = 1L;
 	private Reason reason;
 	
 	public static enum Reason { 

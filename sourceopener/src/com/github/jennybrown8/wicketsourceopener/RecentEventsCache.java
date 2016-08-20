@@ -1,14 +1,14 @@
-package net.ftlines.wicketsource.sourceopener;
+package com.github.jennybrown8.wicketsourceopener;
 
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import net.ftlines.wicketsource.sourceopener.preferences.PreferenceConstants;
-
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+
+import com.github.jennybrown8.wicketsourceopener.preferences.PreferenceConstants;
 
 /**
  * Limits the number of recent click events that are tracked. Provides limited

@@ -1,4 +1,4 @@
-package net.ftlines.wicketsource.sourceopener;
+package com.github.jennybrown8.wicketsourceopener;
 
 import java.util.logging.Logger;
 
@@ -21,7 +21,7 @@ import org.eclipse.jdt.core.search.SearchPattern;
  */
 public final class SearchWithProgress extends Job {
 
-	private static final String TASK_SEARCHING_FOR_FILE = "SourceOpener searching for file... ";
+	private static final String TASK_SEARCHING_FOR_FILE = "WicketSourceOpener searching for file... ";
 	private String packageName;
 	private String fileName;
 	private final PackageFileSearchRequester callback;

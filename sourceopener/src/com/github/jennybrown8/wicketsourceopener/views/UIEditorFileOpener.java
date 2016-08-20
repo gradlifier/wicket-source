@@ -1,6 +1,4 @@
-package net.ftlines.wicketsource.sourceopener.views;
-
-import net.ftlines.wicketsource.sourceopener.OpenEvent;
+package com.github.jennybrown8.wicketsourceopener.views;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jdt.core.search.SearchMatch;
@@ -13,6 +11,8 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.AbstractTextEditor;
+
+import com.github.jennybrown8.wicketsourceopener.OpenEvent;
 
 /**
  * Opens a file in the editor, and jumps to the right line of that file.
