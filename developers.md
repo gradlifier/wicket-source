@@ -349,30 +349,33 @@ then find the tiny button "upload updated package" near the top the of the form.
 Be sure you've re-read the instructions at the URL above carefully before doing this.  The details
 might change over time.
 
+# FireFox Plugin
 
-# Developing on WicketSourceForFirebug
+Back in 2011 when this extension was first created, Firefox didn't have 'Inspect' behavior unless
+Firebug was installed.  So this extension was developed as a sidepane for firebug.  Since then,
+the format of web extensions has changed dramatically, necessitating a complete rewrite of the 
+wicket-source extension, if it's to remain compatible with Firefox.  Helpfully, the Web Extensions 
+framework is now designed to be cross-browser, which means I may be able to reuse the chrome
+extension code to create a firefox extension.
 
-The plugin for Firefox's Firebug adds a tab pane to Firebug, with an html snippet that
-produces a link to the Eclipse wicket-source-opener plugin's http server on localhost.  Clicking on
-the link in the browser plugin sends a message to the eclipse plugin to open a specific source file on
-a specific line.
+As a result, all references to wicket source for firebug are now obsolete, and I'm starting 
+over for a firefox plugin.
 
-The browser plugins are the most complex code in this entire project.  Web browsers are solidly sandboxed,
-so their plugin code is extremely modular to cooperate with sandboxing requirements.  These are also
-the places most prone to change over the years.
 
-## Setup for WicketSourceForFirebug
+# Developing on WicketSourceForFirefox
 
-Tools: java, git, firefox, firebug
+## Setup for WicketSourceForFirefox
+
+Tools: java, git, firefox, firefox
 Prereqs: wicket-source and wicket-source-demo work, demo's jetty is running
 Helpful: wicket-source-opener installed and working in Eclipse
 
-## Building WicketSourceForFirebug
+## Building WicketSourceForFirefox
 
-## Testing WicketSourceForFirebug
+## Testing WicketSourceForFirefox
 
-## Signing and Publishing WicketSourceForFirebug
+## Signing and Publishing WicketSourceForFirefox
 
-The firebug plugin is published via the Firefox app store.
+The firefox extension is published via the Firefox app store.
 
 TODO: Details
