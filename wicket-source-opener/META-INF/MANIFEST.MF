@@ -20,3 +20,4 @@ Export-Package: com.github.jennybrown8.wicketsourceopener,
  com.github.jennybrown8.wicketsourceopener.preferences,
  com.github.jennybrown8.wicketsourceopener.socket,
  com.github.jennybrown8.wicketsourceopener.views
+Bundle-Vendor: Jenny Brown
