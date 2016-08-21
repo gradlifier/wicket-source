@@ -354,28 +354,49 @@ might change over time.
 Back in 2011 when this extension was first created, Firefox didn't have 'Inspect' behavior unless
 Firebug was installed.  So this extension was developed as a sidepane for firebug.  Since then,
 the format of web extensions has changed dramatically, necessitating a complete rewrite of the 
-wicket-source extension, if it's to remain compatible with Firefox.  Helpfully, the Web Extensions 
-framework is now designed to be cross-browser, which means I may be able to reuse the chrome
-extension code to create a firefox extension.
+wicket-source extension, if it's to remain compatible with Firefox.  
 
-As a result, all references to wicket source for firebug are now obsolete, and I'm starting 
-over for a firefox plugin.
+The internals of Firefox Developer Tools using Web Extensions are not currently
+complete enough for implementing wicket source viewer easily, because the Inspector's 
+sidebar pane is not yet accessible to extensions.
+
+The internals of Firebug are undergoing a major rewrite also for multi-process firefox, 
+as Firebug (using XUL overlays) is not usable in a standard release-version of firefox anymore.
+https://groups.google.com/forum/#!topic/firebug/iPa122a6op0
+
+In short, this is an awkward time to try to redevelop this plugin for firefox, as neither
+place is ready for an extension to blend with its functionality.  This plugin is on hold
+until the APIs stabilize.
+
+https://getfirebug.com/wiki/index.php/Firebug.next
 
 
 # Developing on WicketSourceForFirefox
 
+Most important piece: cmd-shift-J to open the "Browser Console" which includes logs for 
+extensions. You can use the "Browser Tools" in Firefox to inspect the dom of the browser itself.
+
+Firefox developer tools extensions are built and packaged using jpm, a node.js tool, along
+with a developer edition of firefox.
+
+https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm#Installation
+https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm#Selecting_a_browser_version
+
+
 ## Setup for WicketSourceForFirefox
 
-Tools: java, git, firefox, firefox
+Tools: java, git, firefox, node.js npm/jpm
 Prereqs: wicket-source and wicket-source-demo work, demo's jetty is running
 Helpful: wicket-source-opener installed and working in Eclipse
 
 ## Building WicketSourceForFirefox
 
+TBD
+
 ## Testing WicketSourceForFirefox
 
-## Signing and Publishing WicketSourceForFirefox
+TBD
 
-The firefox extension is published via the Firefox app store.
+## Signing and Publishing WicketSourceForFirefox
 
 TODO: Details
