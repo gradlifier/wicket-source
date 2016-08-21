@@ -82,7 +82,9 @@ function parseNode(wicketsourceString, wicketIdString, server, port, password) {
 	} else {
 		wp.wicketId = null;
 	}
-	wp.eclipseUrl = "http://" + server + ":" + port + "/open?src=" + encodeURIComponent(wicketsourceString) + "&p=" + password;
+	wp.shortUrl = "http://" + server + ":" + port + "/open";
+	wp.eclipseUrlSafe = wp.shortUrl + "?src=" + encodeURIComponent(wicketsourceString);
+	wp.eclipseUrl = wp.eclipseUrlSafe + "&p=" + password;
 	return wp;
 }
 
@@ -125,9 +127,8 @@ function drawLinkRow(table, title, value, wp)
 	nodeA.setAttribute("href", "javascript:void();");
 	nodeA.setAttribute("data", wp.packageName + ":" + wp.sourceLine);
 	nodeA.addEventListener("click", function() { WicketSourceForChrome.fetch(wp.eclipseUrl) });
-	
 	nodeA.appendChild(document.createTextNode(value));
-
+	
 	var tr1 = document.createElement("tr");
 	table.appendChild(tr1);
 	var tdL = document.createElement("td");
@@ -138,6 +139,47 @@ function drawLinkRow(table, title, value, wp)
 	tdR.appendChild(nodeA);
 	tdR.setAttribute("class", "dataValue");
 	tr1.appendChild(tdR);	
+}
+
+function drawHoverUrlRow(table, title, shorttext, hovertext)
+{
+	var tr = document.createElement("tr");
+	table.appendChild(tr);
+
+	var tdL = document.createElement("td");
+	tdL.setAttribute("class", "dataTitle");
+	tr.appendChild(tdL);
+
+	var tdR = document.createElement("td");
+	tdR.setAttribute("class", "dataValue");
+	tdR.appendChild(document.createTextNode(shorttext));
+	tr.appendChild(tdR);
+	
+	var tooltipDiv = document.createElement("div");
+	tooltipDiv.setAttribute("class", "tooltip");
+	tooltipDiv.appendChild(document.createTextNode("eclipse-url"));
+
+	var tooltipSpan = document.createElement("span");
+	tooltipSpan.setAttribute("class", "tooltiptext");
+	tooltipSpan.appendChild(document.createTextNode(hovertext));
+	tooltipDiv.appendChild(tooltipSpan);
+
+	tdL.appendChild(tooltipDiv);
+}
+function drawEmptyRow(table) {
+	var tr1 = document.createElement("tr");
+	table.appendChild(tr1);
+
+	var tdL = document.createElement("td");
+	tdL.setAttribute("class", "dataTitle");
+	tdL.setAttribute("style", "height: 10px;");
+	tdL.appendChild(document.createTextNode(" "));
+	tr1.appendChild(tdL);
+
+	var tdR = document.createElement("td");
+	tdR.appendChild(document.createTextNode(" "));
+	tdR.setAttribute("class", "dataValue");
+	tr1.appendChild(tdR);
 }
 
 function drawTable() {
@@ -163,7 +205,9 @@ function drawTable() {
 	drawDataRow(table, "wicketid", "wicket:id", wid);
 	drawDataRow(table, "package", "package", wp.packageName);
 	drawLinkRow(table, "source", wp.sourceLine, wp);
-	drawDataRow(table, "eclipseResult", "eclipseRequest", "");
+	drawDataRow(table, "eclipseResult", "eclipseResult", "");
+	drawEmptyRow(table);
+	drawHoverUrlRow(table, "src", wp.shortUrl, wp.eclipseUrlSafe);
 	
 	document.getElementById("wsDiv").appendChild(table);
 }

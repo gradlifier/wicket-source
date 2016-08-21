@@ -162,8 +162,16 @@ Tools: Eclipse, maven, java, git
 Prereqs: wicket-source-demo running
 Helpful: chrome plugin or firefox plugin working even if only in dev mode
 
-Alternately you can fake the necessary http requests by constructing URLs manually, but that's a pain.
-It's much nicer if you have one of the browser plugins working first.
+Alternately you can fake the necessary http requests by constructing URLs manually, but that's a 
+pain due to url encoding the colons as `%3A`.  It's much nicer if you have one of the browser plugins working first.
+
+Sample url:
+
+    http://localhost:9123/open?src=com.github.jennybrown8.wicketsource.demo%3AHomePage.java%3A100
+    
+Sample url with password:
+
+    http://localhost:9123/open?src=com.github.jennybrown8.wicketsource.demo%3AHomePage.java%3A100&p=foo
 
 ## Building wicket-source-opener
 
@@ -233,6 +241,10 @@ produces a link to the Eclipse wicket-source-opener plugin's http server on loca
 the link in the browser plugin sends a message to the eclipse plugin to open a specific source file on
 a specific line.
 
+The browser plugins are the most complex code in this entire project.  Web browsers are solidly sandboxed,
+so their plugin code is extremely modular to cooperate with sandboxing requirements.  These are also
+the places most prone to change over the years.
+
 ## Setup for WicketSourceForChrome
 
 Tools: java, git, chrome
@@ -276,7 +288,11 @@ land on a plugin page instead of the active web page, making it hard to find and
 One such page is the Options page, which you can open, and then inspect and read
 the javascript console logs.
 
-TODO: More detail on how to log and how to find the logs.
+I haven't figured out how to get the console logs from sidebar.js yet.  Rather, if 
+something breaks, comment out a section of the javascript and rerun to narrow down
+where the failure is occurring.  Work in small increments and it's not too hard to avoid
+crashes or at least detect them the moment you break the code.  The `alert("foo");` call 
+still works for checking values.
 
 
 ## Testing WicketSourceForChrome
@@ -292,6 +308,8 @@ First we'll test the core behavior of the plugin.
 7. Ensure that text about the wicket attributes shows up, and one of the lines is hyperlinked.
 8. Click the hyperlink and you should see Eclipse open the right file and jump to the right line number.
 9. Inspect something else in the web page.  The panel should update with the item you're now inspecting.
+10. In the sidebar pane, hover over `eclipse-url` and validate that it's creating a URL correctly, and
+that the hover tooltip css behavior looks decent.
 
 Next we'll test the preferences pane and custom settings.
 
@@ -302,14 +320,16 @@ Next we'll test the preferences pane and custom settings.
 5. Close out the options.  Come back into options.  Make sure the settings saved and come back up.
 6. Close out of Chrome.  Restart it.  Come back into options.  Make sure the settings come back up.
 7. Verify that the hyperlink produces an updated host and port call.
-8. Ensure clicking the link goes to the right thing (TODO: how? Having trouble confirming this one...)
+8. Ensure clicking the link goes to the right thing by looking at the hover tooltip on `eclipse-url` in the 
+dev tools sidebar pane while inspecting a wicket component.
 9. Modify the required password both in wicket-source-opener and in the browser plugin.  Save.
 10. Reload the plugin.  Click on a link and ensure that the request to wicket-source-opener still works with password.
 11. Take the password back out of just the chrome plugin; ensure that saving works and the default empty boxes come back in the options page.
 12. Verify that requests to wicket source opener don't work when it requires a password and the browser isn't supplying one.
 13. Take the password back out of wicket source opener, and verify that requests work again.
-14. Look at the icon in Chrome.  It may be grayed out because you're in developer mode, but the shape should be right.
-15. Verify that there are no javascript errors in any console, including the options page console.
+14. Look at the icon in Chrome.  It should be an orange circle and not grayed out.
+15. Verify that there are no javascript errors in any console, including the options page console and
+the popup page console.
 
 
 ## Signing and Publishing WicketSourceForChrome
@@ -324,6 +344,10 @@ The plugin for Firefox's Firebug adds a tab pane to Firebug, with an html snippe
 produces a link to the Eclipse wicket-source-opener plugin's http server on localhost.  Clicking on
 the link in the browser plugin sends a message to the eclipse plugin to open a specific source file on
 a specific line.
+
+The browser plugins are the most complex code in this entire project.  Web browsers are solidly sandboxed,
+so their plugin code is extremely modular to cooperate with sandboxing requirements.  These are also
+the places most prone to change over the years.
 
 ## Setup for WicketSourceForFirebug
 

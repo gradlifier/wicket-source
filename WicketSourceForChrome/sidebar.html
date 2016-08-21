@@ -11,12 +11,36 @@ table {
 .dataValue {
   color: black;
 }
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: silver;
+    color: #000;
+    text-align: left;
+    padding: 5px;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    top: 5px;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
 </style>
 </head>
 <body>
 <div id="wsDiv"></div>
-
 <script type="text/javascript" src="sidebar.js"></script>
-
 </body>
 </html>
