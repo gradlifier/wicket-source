@@ -1,37 +1,7 @@
 <html>
 <head><title>WicketSource Options</title></head>
-<script type="text/javascript">
+<script src="options.js"></script>
 
-// Saves options to localStorage.
-function save_options() {
-  localStorage["server"] = document.getElementById("server").value;
-  localStorage["port"] = document.getElementById("port").value;
-  localStorage["password"] = document.getElementById("password").value;
-  
-  // Update status to let user know options were saved.
-  var status = document.getElementById("status");
-  status.innerHTML = "&nbsp;Saved.&nbsp;";
-  setTimeout(function() {
-    status.innerHTML = "";
-  }, 750);
-}
-
-// Restores select box state to saved value from localStorage.
-function restore_options() {
-  if (! localStorage["server"]) {
-	  document.getElementById("server").value = "localhost";
-	  document.getElementById("port").value = "9123";
-	  document.getElementById("password").value = "";
-	  return;
-  }
-  
-  document.getElementById("server").value = localStorage["server"];
-  document.getElementById("port").value = localStorage["port"];
-  document.getElementById("password").value = localStorage["password"];
-  
-}
-
-</script>
 <style type="text/css">
 .logo {
   vertical-align: middle;
@@ -72,7 +42,7 @@ function restore_options() {
 }
 
 </style>
-<body onload="restore_options()">
+<body>
 
 <p>&nbsp;</p>
 
@@ -109,7 +79,7 @@ password in SourceOpener, and provide that password here. By default, server run
 <tr><td colspan=2><span class="warning">Warning: password will be visible and<br>will be transmitted as plain text.</span></td></tr>
 <tr><td colspan=2>&nbsp;</td></tr>
 <tr><td colspan=2 align="center">
-<div><button onclick="save_options()">Save Preferences</button> </div>
+<div><button type="button" name="save">Save Preferences</button> </div>
 </td></tr>
 <tr><td colspan=2>&nbsp;</td></tr>
 <tr><td colspan=2><div id="status"></div></td></tr>
