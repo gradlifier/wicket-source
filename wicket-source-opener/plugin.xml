@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
+<?eclipse version="4.6"?>
 <plugin>
-
    <extension
          point="org.eclipse.ui.views">
       <category
-            name="Wicket Source Opener"
+            name="%category.name"
             id="com.github.jennybrown8.wicketsourceopener">
       </category>
       <view
@@ -14,7 +13,7 @@
             class="com.github.jennybrown8.wicketsourceopener.views.WicketSourceOpener"
             icon="icons/sample.gif"
             id="com.github.jennybrown8.wicketsourceopener.views.WicketSourceOpener"
-            name="Wicket Source Opener">
+            name="%view.name">
       </view>
    </extension>
    <extension
@@ -40,7 +39,7 @@
       <page
             class="com.github.jennybrown8.wicketsourceopener.preferences.SourceOpenerPreferencePage"
             id="com.github.jennybrown8.wicketsourceopener.preferences.SourceOpenerPreferencePage"
-            name="WicketSourceOpener Preferences">
+            name="%page.name">
       </page>
    </extension>
    <extension
@@ -49,8 +48,8 @@
             class="com.github.jennybrown8.wicketsourceopener.preferences.PreferenceInitializer">
       </initializer>
    </extension>
-   <extension
-         point="org.eclipse.ui.startup">
+   <extension point="org.eclipse.ui.startup">
+     <startup class="com.github.jennybrown8.wicketsourceopener.Startup"/>
    </extension>
 
 </plugin>

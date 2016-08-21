@@ -12,8 +12,12 @@ public class Startup implements IStartup {
 	@Override
 	public void earlyStartup()
 	{
+		try {
 		if (PreferenceValueService.isStartListenerOnStartup()) {
 			// don't have to do anything, just be registered.
+		}
+		} catch (Throwable t) {
+			t.printStackTrace();
 		}
 	}
 

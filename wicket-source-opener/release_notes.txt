@@ -3,6 +3,7 @@ Remaining:
 * Package the build properly for release on a Eclipse update site. Check into version management / auto-updates.
 
 08/20/2016 - Lots of updates!  Same functionality.
+ - Built against Eclipse Neon 4.6, with a few minor API changes and fixes
  - "Recent File Locations" view renamed to "Wicket Source Opener" for consistency.
  - Updated to Java 8.  Changed artifact and package name.
  - Adding build documentation, and re-releasing with latest.

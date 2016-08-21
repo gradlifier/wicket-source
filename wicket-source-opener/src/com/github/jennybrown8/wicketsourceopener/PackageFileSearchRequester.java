@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jdt.core.search.SearchMatch;
 import org.eclipse.jdt.core.search.SearchRequestor;
@@ -79,7 +80,9 @@ public class PackageFileSearchRequester extends SearchRequestor implements IExce
 	@Override
 	public void acceptSearchMatch(SearchMatch match) throws CoreException
 	{
-		list.add(match);
+		if (match.getResource().getProjectRelativePath() != Path.EMPTY) {
+			list.add(match);
+		}
 	}
 
 	public SearchMatch[] allMatches()
@@ -91,9 +94,12 @@ public class PackageFileSearchRequester extends SearchRequestor implements IExce
 		SearchMatch[] matches = new SearchMatch[list.size()];
 		for (int i = 0; i < list.size(); i++) {
 			SearchMatch match = list.get(i);
-			log.info("Matched WicketSourceOpener file with project-relative path of project=" + match.getResource().getProject() + " and path=" + match.getResource().getProjectRelativePath());
+			log.info("Matched WicketSourceOpener file with project-relative path of project=" 
+			+ match.getResource().getProject() + " and path=" 
+			+ match.getResource().getProjectRelativePath());
 			matches[i] = match;
 		}
+		
 		return matches;
 	}
 

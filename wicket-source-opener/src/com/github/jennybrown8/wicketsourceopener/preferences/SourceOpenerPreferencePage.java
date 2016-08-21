@@ -29,7 +29,7 @@ public class SourceOpenerPreferencePage extends FieldEditorPreferencePage implem
 	public SourceOpenerPreferencePage() {
 		super(GRID);
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
-		setDescription("WicketSourceOpener Preferences");
+		setDescription("Preferences");
 	}
 
 	/**
@@ -53,10 +53,6 @@ public class SourceOpenerPreferencePage extends FieldEditorPreferencePage implem
 				getFieldEditorParent()));
 		addField(new BooleanFieldEditor(PreferenceConstants.P_START_ON_STARTUP, "&Listen automatically on startup? ",
 				BooleanFieldEditor.SEPARATE_LABEL, getFieldEditorParent()));
-
-		createNoteComposite(JFaceResources.getDialogFont(), this.getFieldEditorParent().getParent(), "Logs:",
-				"To see plug-in logs on Windows, modify eclipse.ini to use java.exe instead of javaw.exe to get a console.");
-
 
 	}
 
