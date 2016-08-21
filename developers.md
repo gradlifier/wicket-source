@@ -334,9 +334,21 @@ the popup page console.
 
 ## Signing and Publishing WicketSourceForChrome
 
-The chrome plugin is published via the Chrome Web Store.
+The chrome plugin is published via the Chrome Web Store using the Chrome Developer Dashboard.
 
-TODO: Details
+Instructions: https://developer.chrome.com/extensions/packaging
+
+You can optionally make a crx file with `Pack extension` if you want to distribute privately (for 
+instance to testers), but this is not needed for updating using the developer dashboard.  
+
+For publishing to the web store, you will instead make a zip file (used only for that!), 
+with your private pem file inside using a special filename, so that it recognizes the relationship 
+to the prior publish.  Find the existing item on the developer dashboard, and click "Edit", and 
+then find the tiny button "upload updated package" near the top the of the form.
+
+Be sure you've re-read the instructions at the URL above carefully before doing this.  The details
+might change over time.
+
 
 # Developing on WicketSourceForFirebug
 
