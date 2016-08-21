@@ -6,7 +6,7 @@ xmlhttp.onreadystatechange = function() {
 	if (this.readyState == 4) {
 			clearTimeout(this.requestTimer);
 			if (xmlhttp.lastRequestTimedOut) {
-				xmlhttp.updateText("Error connecting. Is your SourceOpener Eclipse plugin configured and running?");
+				xmlhttp.updateText("Error connecting. Is your Wicket Source Opener Eclipse plugin configured and running?");
 			} else {
 				xmlhttp.updateText("OK");
 			}
