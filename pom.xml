@@ -7,7 +7,7 @@
 	</parent>
 	<groupId>com.github.jennybrown8.wicket-source</groupId>
 	<artifactId>wicket-source-parent</artifactId>
-	<version>7.4.0-SNAPSHOT</version>
+	<version>8.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Wicket-source displays component instantiation location in an html attribute, speeding the modification of existing wicket pages. The only module required for maven dependency in your app is wicket-source itself, although a demo app is included.</description>
 	<name>Wicket Source With Plugins</name>
@@ -38,7 +38,8 @@
 	</developers>
 
 	<properties>
-		<wicket.version>7.4.0</wicket.version>
+		<wicket.version>8.0.0-M1</wicket.version>
+		<maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -47,4 +48,77 @@
 		<module>wicket-source-demo</module>
 	</modules>
 
+	<build>
+		<plugins>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<optimize>true</optimize>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>${maven-gpg-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${maven-gpg-plugin.version}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

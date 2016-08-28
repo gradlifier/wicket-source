@@ -7,7 +7,7 @@ import com.github.jennybrown8.wicketsource.WicketSource;
  * Application object for your web application. If you want to run this
  * application without deploying, run the Start class.
  * 
- * @see com.github.jennybrown8.wicketsource.demo.sample.Start#main(String[])
+ * See com.github.jennybrown8.wicketsource.demo.Start#main(String[])
  */
 public class WicketApplication extends WebApplication {
 	/**
