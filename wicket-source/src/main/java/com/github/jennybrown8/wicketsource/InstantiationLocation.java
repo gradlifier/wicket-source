@@ -29,7 +29,7 @@ public class InstantiationLocation implements Serializable {
 	/**
 	 * When a component is instantiated, record its source location as part of its metadata.
 	 * @param component being instantiated
-	 * @throws UnsupportedComponentException
+	 * @throws UnsupportedComponentException if the instantiation location cannot be extracted
 	 */
 	public InstantiationLocation(Component component) 
 	throws UnsupportedComponentException
@@ -95,7 +95,6 @@ public class InstantiationLocation implements Serializable {
 	 * source of this component. Result is of the form
 	 * net.simsa.packagename:ClassName.java:35 (package:file:line).
 	 * 
-	 * @param component to search for
 	 * @return String indicating package : filename.java : lineNumber
 	 */
 	public String generateSourceLocationAttribute()
