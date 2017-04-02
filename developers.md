@@ -94,7 +94,22 @@ that stack trace changes in a future version of wicket, the data shown could bec
 
 The wicket-source project is published as a maven artifact to the OSS Sonatype maven central repository.
 
-TODO: More details
+For jar signing, credentials are in the m2 settings.xml file per Sonatype instructions - this 
+includes a gpg passphrase and the jira account credentials.  Another copy is encrypted in my password manager.
+These should be picked up automatically when running maven from cygwin, but the details drift over the years.
+Probably best to upgrade cygwin packages before trying to deploy.
+
+Once that is working, the following commands are useful:
+
+    mvn package
+    mvn clean deploy
+    
+Then visit Sonatype and dig around for the deployed artifacts.  Note the difference between a
+snapshot release and a full version release (and there are 3 projects in which to set the version in the pom).
+The parent pom contains a setting `<autoReleaseAfterClose>false</autoReleaseAfterClose>^` that
+controls whether the release is automatically published from staging to release.
+
+The Sonatype Jira is the source to go for any serious troubles.
 
 
 # Developing on wicket-source-demo
