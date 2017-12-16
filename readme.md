@@ -33,3 +33,17 @@ is complicated, so I'm providing a [jar for your dropins folder](https://github.
 
 
 Feedback and bug reports welcome. See the [Issue Tracker](https://github.com/jennybrown8/wicket-source/issues). 
+
+## License
+
+This software is available under an open source Apache License, version 2.0.
+
+    You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
